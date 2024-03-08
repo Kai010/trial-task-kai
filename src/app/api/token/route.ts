@@ -27,31 +27,31 @@ export async function POST(req: Request) {
   let polygonTokens: Token[] = tokens.filter((token) => token.chainId === 137);
   ethereumTokens = ethereumTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   celoTokens = celoTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   bnbTokens = bnbTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   baseTokens = baseTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   arbitrumTokens = arbitrumTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   polygonTokens = polygonTokens.map((token, index) => ({
     ...token,
-    id: index,
+    id: index + 1,
   }));
   if (chain === "ethereum") {
     return NextResponse.json({
-      tokensList: ethereumTokens.slice(0, 101),
+      tokensList: ethereumTokens,
     });
   } else if (chain === "base") {
     return NextResponse.json({

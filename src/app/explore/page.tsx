@@ -39,7 +39,7 @@ const Page = () => {
   return (
     <div className="w-5/6">
       {
-  status === 'authenticated' ? (
+  status === 'authenticated' && tokensList.length != 0 ? (
       <div className="flex justify-end">
           <DropdownMenu>
           <DropdownMenuTrigger asChild>

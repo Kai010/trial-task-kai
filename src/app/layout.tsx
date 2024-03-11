@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster"
 import {Web3Providers} from '@/providers/Web3Provider'
+import ThemeProvider from "@/providers/NextThemeProvider";
 import Provider from "@/providers/sessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <Web3Providers>
         <Provider>
         <main className='h-screen flex flex-col justify-center items-center'>
@@ -30,6 +32,7 @@ export default function RootLayout({
         <Toaster />
         </Provider>
       </Web3Providers>
+      </ThemeProvider>
         </body>
     </html>
   );

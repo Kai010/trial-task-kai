@@ -1,17 +1,20 @@
 'use client'
 
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 import {NotConnected} from "./NotConnected"
-import { useRouter } from "next/navigation";
+import { SwapWidget, darkTheme, lightTheme } from '@uniswap/widgets'
+import '@uniswap/widgets/fonts.css'
 
 const SwapDialog = () => {
-  const router = useRouter()
-  router.refresh();
+
+  let darkMode = true
   const { address, isConnected } = useAccount();
   return (
     <div className='flex items-center justify-center w-full'>
       {isConnected ? (
-        <h1 className="text-4xl">Swap</h1>
+          <div className="Uniswap">
+        <SwapWidget hideConnectionUI={true} theme={darkMode ? darkTheme : lightTheme} />
+      </div>
       ) : (
         <NotConnected />
       )}

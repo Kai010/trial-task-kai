@@ -13,7 +13,8 @@ import {
   mainnet,
   optimism,
   polygon,
-  bsc
+  bsc,
+  goerli
 } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
@@ -27,7 +28,8 @@ const config = getDefaultConfig({
     optimism,
     arbitrum,
     base,
-    bsc
+    bsc,
+    goerli
   ],
   ssr: true,
 });

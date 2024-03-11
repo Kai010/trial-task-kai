@@ -25,10 +25,10 @@ export async function POST(req: Request) {
     (token) => token.chainId === 42161
   );
   let polygonTokens: Token[] = tokens.filter((token) => token.chainId === 137);
-  ethereumTokens = ethereumTokens.map((token, index) => ({
-    ...token,
-    id: index + 1,
-  }));
+  // ethereumTokens = ethereumTokens.map((token, index) => ({
+  //   ...token,
+  //   id: index + 1,
+  // }));
   celoTokens = celoTokens.map((token, index) => ({
     ...token,
     id: index + 1,

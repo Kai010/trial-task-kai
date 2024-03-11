@@ -4,9 +4,15 @@ import { useAccount, useChainId } from "wagmi";
 import {NotConnected} from "./NotConnected"
 import { SwapWidget, darkTheme, lightTheme } from '@uniswap/widgets'
 import '@uniswap/widgets/fonts.css'
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const SwapDialog = () => {
-
+  const router = useRouter()
+  useEffect(() => {
+    router.refresh()
+  })
+  
   let darkMode = true
   const { address, isConnected } = useAccount();
   return (
